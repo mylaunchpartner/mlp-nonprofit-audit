@@ -1,0 +1,16 @@
+{
+  "slug": "BETTER-BRIDGE",
+  "partner": "Better Bridge",
+  "partnerHandle": "@ourbetterbridge",
+  "donateUrl": "https://betterbridge.org/donate-today/",
+  "partnerUrl": "https://betterbridge.org/",
+  "partnerBlurb": [
+    "Better Bridge is a nonprofit offering free personal finance and small business education, a free budgeting app, and free Playbook textbooks for community programs.",
+    "Better Bridge pledges that 100% of donations go to building its free app, printing free textbooks, and outreach."
+  ],
+  "legalLine": "Better Bridge is a DBA of Bridge to Better Living Financial Advocacy Group Inc., a 501(c)(3) nonprofit, EIN 33-3035880.",
+  "cap": 25,
+  "endDate": "",
+  "turnaroundDays": "",
+  "ghlFormId": ""
+}

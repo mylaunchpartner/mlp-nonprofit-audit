@@ -1,0 +1,170 @@
+<!-- MLP TEMPLATE | Nonprofit partner audit page. Edit this file, then run build.py. Tokens like {{partner}} come from partners/<SLUG>.json. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+/* Full-width breakout: escapes GHL's boxed row/column no matter how narrow it is. */
+html,body{overflow-x:clip}
+.mlpnp{position:relative;left:50%;width:100vw;max-width:100vw;margin-left:-50vw!important;margin-right:0!important}
+.mlpnp,.mlpnp *,.mlpnp *::before,.mlpnp *::after{box-sizing:border-box}
+.mlpnp{
+  --np-navy:#102a42;--np-navy-deep:#0a1b2b;--np-amber:#e9a25b;--np-amber-deep:#b8692a;--np-brown:#6b4a1f;
+  --np-cream:#f6f4ef;--np-line:#d9d3c7;--np-ink:#1c2430;--np-muted-on-navy:#d5dde6;--np-foot:#c7d0da;
+  --np-display:'Space Grotesk',system-ui,sans-serif;--np-body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-family:var(--np-body);font-size:17px;line-height:1.55;color:var(--np-ink);background:var(--np-cream);
+  text-align:left;-webkit-font-smoothing:antialiased
+}
+.mlpnp p,.mlpnp h1,.mlpnp h2,.mlpnp h3,.mlpnp ul,.mlpnp li{margin:0;padding:0;color:inherit;font-family:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;letter-spacing:normal;text-transform:none;text-align:left}
+.mlpnp h1,.mlpnp h2,.mlpnp h3{font-weight:600}
+.mlpnp a{color:var(--np-navy)}
+.mlpnp a:hover{color:var(--np-navy-deep)}
+.mlpnp :focus-visible{outline:3px solid var(--np-amber);outline-offset:3px}
+.mlpnp .mlpnp-wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 24px}
+.mlpnp .mlpnp-display{font-family:var(--np-display)}
+
+.mlpnp .mlpnp-top{background:var(--np-navy);color:var(--np-cream)}
+.mlpnp .mlpnp-bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding-top:18px;padding-bottom:18px}
+.mlpnp .mlpnp-brand{font:600 18px/1.3 var(--np-display);letter-spacing:.01em}
+.mlpnp .mlpnp-brand span{color:var(--np-amber)}
+.mlpnp .mlpnp-top .mlpnp-bar a{color:var(--np-cream);font-weight:600;font-size:15px;text-underline-offset:4px}
+
+.mlpnp .mlpnp-hero{display:flex;flex-wrap:wrap;gap:48px;align-items:center;padding-top:72px;padding-bottom:88px}
+.mlpnp .mlpnp-hero-main{flex:999 1 520px;min-width:0}
+.mlpnp .mlpnp-eyebrow{font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--np-amber);margin-bottom:16px!important}
+.mlpnp .mlpnp-h1{font:700 clamp(40px,6vw,64px)/1.05 var(--np-display);margin-bottom:20px!important;color:var(--np-cream)}
+.mlpnp .mlpnp-lede{font-size:19px;max-width:560px;color:var(--np-muted-on-navy);margin-bottom:32px!important}
+.mlpnp .mlpnp-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.mlpnp .mlpnp-btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:6px;font-weight:600;font-size:16px;text-decoration:none}
+.mlpnp .mlpnp-btn--amber{background:var(--np-amber);color:var(--np-navy)}
+.mlpnp .mlpnp-btn--amber:hover{background:#f0b375;color:var(--np-navy)}
+.mlpnp .mlpnp-btn--ghost{border:2px solid var(--np-cream);color:var(--np-cream)}
+.mlpnp .mlpnp-btn--ghost:hover{background:rgba(246,244,239,.1);color:var(--np-cream)}
+.mlpnp .mlpnp-card{flex:1 1 300px;background:var(--np-cream);color:var(--np-ink);border-radius:10px;padding:28px}
+.mlpnp .mlpnp-card-kicker{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--np-brown);margin-bottom:6px!important}
+.mlpnp .mlpnp-card-num{font:700 44px/1.1 var(--np-display);color:var(--np-navy);margin-bottom:4px!important}
+.mlpnp .mlpnp-card-sub{font-size:16px;margin-bottom:20px!important}
+.mlpnp .mlpnp-card-note{font-size:15px;padding-top:16px;border-top:1px solid var(--np-line)}
+
+.mlpnp .mlpnp-section{padding-top:80px;padding-bottom:80px}
+.mlpnp .mlpnp-white{background:#fff}
+.mlpnp .mlpnp-h2{font:600 36px/1.15 var(--np-display);color:var(--np-navy);margin-bottom:40px!important}
+.mlpnp .mlpnp-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.mlpnp .mlpnp-step{background:#fff;border-radius:10px;padding:28px}
+.mlpnp .mlpnp-step .mlpnp-step-num{font:700 40px/1 var(--np-display);color:var(--np-amber-deep);margin-bottom:16px!important}
+.mlpnp .mlpnp-step h3{font-size:20px;color:var(--np-navy);margin-bottom:8px}
+.mlpnp .mlpnp-step p{font-size:16px}
+
+.mlpnp .mlpnp-split{display:flex;flex-wrap:wrap;gap:48px}
+.mlpnp .mlpnp-split > div{flex:1 1 380px;min-width:0}
+.mlpnp .mlpnp-list{padding-left:20px!important;font-size:17px;display:flex;flex-direction:column;gap:12px}
+.mlpnp .mlpnp-list li{list-style:disc}
+.mlpnp .mlpnp-why{background:var(--np-cream);border-radius:10px;padding:32px}
+.mlpnp .mlpnp-why .mlpnp-h2{font-size:28px;margin-bottom:16px!important}
+.mlpnp .mlpnp-why p{font-size:17px;margin-bottom:14px!important}
+.mlpnp .mlpnp-why a{display:inline-block;margin-top:6px;font-weight:600;font-size:16px}
+
+.mlpnp #mlpnp-claim{scroll-margin-top:90px}
+.mlpnp .mlpnp-claim{max-width:760px;margin:0 auto}
+.mlpnp .mlpnp-claim .mlpnp-h2{margin-bottom:8px!important}
+.mlpnp .mlpnp-claim-lede{font-size:17px;margin-bottom:28px!important}
+.mlpnp .mlpnp-formbox{background:#fff;border-radius:10px;padding:12px;min-height:200px}
+.mlpnp .mlpnp-formbox iframe{width:100%;border:0;display:block;min-height:820px}
+.mlpnp .mlpnp-formnote{padding:28px;font-size:16px;color:var(--np-ink)}
+
+.mlpnp .mlpnp-foot{background:var(--np-navy);color:var(--np-foot);font-size:14px}
+.mlpnp .mlpnp-foot .mlpnp-wrap{display:flex;flex-direction:column;gap:12px;padding-top:40px;padding-bottom:40px}
+.mlpnp .mlpnp-foot strong{color:var(--np-cream)}
+.mlpnp .mlpnp-foot a{color:var(--np-cream)}
+
+@media (max-width:600px){
+  .mlpnp .mlpnp-hero{padding-top:48px;padding-bottom:56px;gap:32px}
+  .mlpnp .mlpnp-section{padding-top:56px;padding-bottom:56px}
+  .mlpnp .mlpnp-h2{font-size:30px;margin-bottom:28px!important}
+  .mlpnp .mlpnp-btn{width:100%;justify-content:center}
+}
+</style>
+
+<div class="mlpnp" id="mlpnp-root" data-partner="{{partner}}">
+  <div class="mlpnp-top">
+    <div class="mlpnp-wrap mlpnp-bar">
+      <p class="mlpnp-brand">My Launch Partner <span>×</span> {{partner}}</p>
+      <a href="#mlpnp-claim">Claim your audit</a>
+    </div>
+    <div class="mlpnp-wrap mlpnp-hero">
+      <div class="mlpnp-hero-main">
+        <p class="mlpnp-eyebrow">Give back. Grow your business.</p>
+        <h1 class="mlpnp-h1">Give $5 to {{partner}}. Get a free SEO audit.</h1>
+        <p class="mlpnp-lede">Donate $5 or more, show us your receipt, and My Launch Partner will audit your website and tell you exactly what's holding back your Google rankings.</p>
+        <div class="mlpnp-ctas">
+          <a class="mlpnp-btn mlpnp-btn--amber" href="{{donateUrl}}" target="_blank" rel="noopener">Step 1: Donate to {{partner}}</a>
+          <a class="mlpnp-btn mlpnp-btn--ghost" href="#mlpnp-claim">Step 2: Claim your audit</a>
+        </div>
+      </div>
+      <div class="mlpnp-card">
+        <p class="mlpnp-card-kicker">Limited run</p>
+        <p class="mlpnp-card-num">{{cap}} audits</p>
+        <p class="mlpnp-card-sub">available for this partnership.{{endLine}}</p>
+        <p class="mlpnp-card-note">100% of your donation goes to {{partner}}. My Launch Partner keeps none of it.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mlpnp-section">
+    <div class="mlpnp-wrap">
+      <h2 class="mlpnp-h2">How it works</h2>
+      <div class="mlpnp-steps">
+        <div class="mlpnp-step">
+          <p class="mlpnp-step-num">1</p>
+          <h3>Donate $5 or more</h3>
+          <p>Give directly on {{partner}}'s donation page. Any amount from $5 up counts.</p>
+        </div>
+        <div class="mlpnp-step">
+          <p class="mlpnp-step-num">2</p>
+          <h3>Send your receipt</h3>
+          <p>Upload a screenshot of your donation receipt email with your website below.</p>
+        </div>
+        <div class="mlpnp-step">
+          <p class="mlpnp-step-num">3</p>
+          <h3>Get your audit</h3>
+          <p>Your audit lands in your inbox{{turnaroundLine}}, with an optional call to walk through it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mlpnp-section mlpnp-white">
+    <div class="mlpnp-wrap mlpnp-split">
+      <div>
+        <h2 class="mlpnp-h2">What's in your audit</h2>
+        <ul class="mlpnp-list">
+          <li>Where you rank on Google today for the searches that matter to your business</li>
+          <li>Technical issues slowing your site down or keeping pages out of search</li>
+          <li>On-page fixes for titles, descriptions, headings and content</li>
+          <li>How you stack up against the competitors outranking you</li>
+          <li>Your top 3 priorities, in the order that will move rankings fastest</li>
+        </ul>
+      </div>
+      <div class="mlpnp-why">
+        <h2 class="mlpnp-h2">Why {{partner}}</h2>
+        {{partnerBlurbHtml}}
+        <a href="{{partnerUrl}}" target="_blank" rel="noopener">Learn more about {{partner}}</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mlpnp-section" id="mlpnp-claim">
+    <div class="mlpnp-wrap mlpnp-claim">
+      <h2 class="mlpnp-h2">Claim your free audit</h2>
+      <p class="mlpnp-claim-lede">Already donated? Fill this out and attach your receipt.</p>
+      <div class="mlpnp-formbox" data-mlpnp-form></div>
+    </div>
+  </div>
+
+  <div class="mlpnp-foot">
+    <div class="mlpnp-wrap">
+      <p><strong>The fine print.</strong> Limited to the first {{cap}} verified donations{{endFine}}. One audit per business. Donations are made directly to {{partner}}; My Launch Partner LLC receives no part of any donation. Because you receive an audit in return, your donation may not be tax-deductible. Check with your tax advisor.</p>
+      <p>{{legalLine}}</p>
+      <p>My Launch Partner LLC · Sedona, Arizona</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Better Bridge audit page preview</title>
+<style>
+body{margin:0;font-family:system-ui,sans-serif;background:#e8e8e8}
+.fake-ghl-header{background:#fff;padding:20px;text-align:center;border-bottom:1px solid #ccc}
+.fake-ghl-row{max-width:640px;margin:0 auto;padding:30px;background:#fafafa;overflow:hidden}
+.fake-ghl-row p{color:#555;font-size:14px;margin:0 0 12px}
+</style>
+</head>
+<body>
+<div class="fake-ghl-header">Preview: the page sits in a 640px boxed row with padding and overflow hidden, like a default GHL section. It should still fill the whole window width.</div>
+<div class="fake-ghl-row">
+<p>[GHL row starts here]</p>
+<div id="mlpnp-audit" data-form-id=""></div>
+<script src="../dist/BETTER-BRIDGE-audit.js"></script>
+<p>[GHL row ends here]</p>
+</div>
+</body>
+</html>

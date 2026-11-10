@@ -1,0 +1,71 @@
+<!-- MLP TEMPLATE | Step 2: claim received. The audit claim form redirects here. Tokens come from partners/<SLUG>.json. -->
+{{sharedHead}}
+
+<div class="mlpnp" id="mlpnp-root" data-partner="{{partner}}">
+  <div class="mlpnp-top">
+    <div class="mlpnp-wrap mlpnp-bar">
+      <p class="mlpnp-brand">My Launch Partner <span>×</span> {{partner}}</p>
+    </div>
+    <div class="mlpnp-wrap mlpnp-hero mlpnp-hero--short">
+      <div class="mlpnp-hero-main">
+        <p class="mlpnp-eyebrow">Receipt received</p>
+        <h1 class="mlpnp-h1">Thank you. Your audit is next.</h1>
+        <p class="mlpnp-lede">Your donation helps {{partner}} keep its programs free. We'll verify your receipt and email your audit{{turnaroundLine}}.</p>
+        <div class="mlpnp-ctas">
+          <a class="mlpnp-btn mlpnp-btn--amber" href="{{bookUrl}}" data-mlpnp-keepquery>Book your walkthrough call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mlpnp-section">
+    <div class="mlpnp-wrap">
+      <div class="mlpnp-steps-track">
+        <div class="mlpnp-track mlpnp-track--done">
+          <span class="mlpnp-badge" aria-hidden="true">✓</span>
+          <div>
+            <p class="mlpnp-kicker">Done</p>
+            <h3>Donated to {{partner}}</h3>
+            <p>100% of your gift goes to {{partner}}.</p>
+          </div>
+        </div>
+        <div class="mlpnp-track mlpnp-track--done">
+          <span class="mlpnp-badge" aria-hidden="true">✓</span>
+          <div>
+            <p class="mlpnp-kicker">Done</p>
+            <h3>Receipt and business details received</h3>
+            <p>We're verifying your donation, then we start your audit.</p>
+          </div>
+        </div>
+        <div class="mlpnp-track mlpnp-track--now">
+          <span class="mlpnp-badge" aria-hidden="true">03</span>
+          <div>
+            <p class="mlpnp-kicker">Do this now · 1 min</p>
+            <h3>Book your walkthrough call</h3>
+            <p>30 minutes with Samantha. We'll go over your audit and the fastest fixes.</p>
+            <a class="mlpnp-btn mlpnp-btn--amber" href="{{bookUrl}}" data-mlpnp-keepquery>Pick a time</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mlpnp-section mlpnp-white">
+    <div class="mlpnp-wrap mlpnp-follow">
+      <h2 class="mlpnp-h2" style="margin-bottom:12px!important">While you wait</h2>
+      <p>We post memes about running a business that are a little too accurate.</p>
+      <div class="mlpnp-ctas" style="justify-content:center">
+        <a class="mlpnp-btn mlpnp-btn--amber" href="https://www.instagram.com/mylaunchpartner/" target="_blank" rel="noopener">Follow @mylaunchpartner</a>
+        <a class="mlpnp-btn" style="border:2px solid var(--np-navy);color:var(--np-navy)" href="{{partnerUrl}}" target="_blank" rel="noopener">See what {{partner}} is building</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mlpnp-foot">
+    <div class="mlpnp-wrap">
+      <p>Questions? Message us on Instagram at <a href="https://www.instagram.com/mylaunchpartner/" target="_blank" rel="noopener">@mylaunchpartner</a>.</p>
+      <p>{{legalLine}}</p>
+      <p>My Launch Partner LLC · Sedona, Arizona</p>
+    </div>
+  </div>
+</div>

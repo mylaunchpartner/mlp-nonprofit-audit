@@ -184,7 +184,7 @@ function mlpnpUnclip(el){
 function mlpnpForm(root,formId,partner){
   var box=root.querySelector('[data-mlpnp-form]');
   if(!box)return;
-  if(!formId||/PASTE/i.test(formId)){
+  if(!formId||/PASTE|YOUR_/i.test(formId)){
     box.innerHTML='<p class="mlpnp-formnote">The claim form opens soon. Keep your donation receipt handy and check back shortly.</p>';
     return;
   }

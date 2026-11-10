@@ -17,7 +17,7 @@ function mlpnpUnclip(el){
 function mlpnpForm(root,formId,partner){
   var box=root.querySelector('[data-mlpnp-form]');
   if(!box)return;
-  if(!formId||/PASTE/i.test(formId)){
+  if(!formId||/PASTE|YOUR_/i.test(formId)){
     box.innerHTML='<p class="mlpnp-formnote">The claim form opens soon. Keep your donation receipt handy and check back shortly.</p>';
     return;
   }
@@ -48,5 +48,7 @@ function mlpnpForm(root,formId,partner){
   host.innerHTML=HTML;
   var root=host.querySelector('#mlpnp-root');
   mlpnpUnclip(root);
-  mlpnpForm(root,(host.getAttribute('data-form-id')||DEFAULT_FORM).trim(),PARTNER);
+  var attr=(host.getAttribute('data-form-id')||'').trim();
+  if(!attr||/PASTE|YOUR_/i.test(attr)){attr=DEFAULT_FORM;}
+  mlpnpForm(root,attr,PARTNER);
 })();
